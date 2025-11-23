@@ -59,7 +59,6 @@ def add_lora(model_name):
     encoder = get_peft_model(encoder, config)
     encoder.print_trainable_parameters()
 
-    # replace auto_model with LoRA version
     base.auto_model = encoder
 
     pooling = Pooling(
@@ -82,7 +81,6 @@ def finetune_model(model_key, output_dir, batch_size=32, epochs=1, use_lora=Fals
     train_df = load_sts_dataset()
     examples = prepare_examples(train_df)
 
-    # Build training dataset
     if not use_lora:
         model = SentenceTransformer(model_name)
     else:
@@ -103,10 +101,8 @@ def finetune_model(model_key, output_dir, batch_size=32, epochs=1, use_lora=Fals
 
     print(f"Model saved to: {output_dir}")
 
-    # Track trainable parameters
     total_trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
 
-    # Log training run
     log_path = "finetune_log.csv"
     run_info = {
         "model_key": model_key,
