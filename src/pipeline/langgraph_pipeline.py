@@ -39,8 +39,9 @@ graph.add_node(
 
 # === ENTRY POINT DAN EDGES ===
 graph.set_entry_point("SSR")
-graph.add_edge("SSR", END)
-# graph.add_edge("SSR", "Intent")
+graph.add_edge("SSR", "Intent")
+graph.add_edge("Intent", END)
+
 # graph.add_edge("Intent", "CEFR")
 # graph.add_edge("CEFR", "Translation")
 # graph.add_edge("Translation", END)
