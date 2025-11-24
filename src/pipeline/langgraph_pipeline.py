@@ -2,7 +2,7 @@ from langgraph.graph import StateGraph, END
 
 from src.pipeline.state import PipelineState
 from src.task1_ranker.node import SSRNode
-# from src.task2_intent.node import IntentNode
+from src.task2_intent.node import IntentNode
 # from src.task3_cefr.node import CEFRNode
 # from src.task4_mt.node import TranslationNode
 
@@ -12,16 +12,16 @@ graph = StateGraph(PipelineState)
 graph.add_node(
     "SSR",
     SSRNode(
-        model_path="src/task1_ranker/models/e5_large_lora",     
+        model_path="models/e5_large_lora",     
     )
 )
 
-# graph.add_node(
-#     "Intent",
-#     IntentNode(
-#         model_path="src/task2_intent/models/intent_classifier"
-#     )
-# )
+graph.add_node(
+    "Intent",
+    IntentNode(
+        model_path="models/distilroberta-base" 
+    )
+)
 
 # graph.add_node(
 #     "CEFR",

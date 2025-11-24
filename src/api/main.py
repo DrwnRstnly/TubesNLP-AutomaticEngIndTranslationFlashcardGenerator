@@ -18,7 +18,6 @@ class GenerateResponse(BaseModel):
     difficulty: list
     translations: list
 
-
 @app.post("/generate", response_model=GenerateResponse)
 def generate_flashcard(req: GenerateRequest):
 
