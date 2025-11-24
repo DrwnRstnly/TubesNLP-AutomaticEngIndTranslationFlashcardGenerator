@@ -13,17 +13,43 @@ def load_model(model_path):
     print(f"Loading model from: {model_path}")
     return SentenceTransformer(model_path)
 
+def clean_sentence(s):
+    s = s.strip()
+    s = s.replace("\n", " ")
+    s = " ".join(s.split())
+
+    return s
+
 def split_into_sentences(text):
-    return sent_tokenize(text)
+    raw = sent_tokenize(text)
+    sentences = []
+
+    for s in raw:
+        s = clean_sentence(s)
+
+        if len(s) == 0:
+            continue
+        if len(s.split()) < 3:
+            continue
+        if any(x in s for x in ["http://", "https://"]):
+            continue
+
+        sentences.append(s)
+
+    return sentences
 
 def compute_similarity(model, sentences, topic):
     topic_emb = model.encode(topic, convert_to_tensor=True)
 
-    sent_emb = model.encode(sentences, convert_to_tensor=True)
+    sent_emb = model.encode(
+        sentences, 
+        batch_size=32, 
+        convert_to_tensor=True
+    )
 
     sim = util.cos_sim(topic_emb, sent_emb).cpu().numpy()[0]
-
     return sim
+
 
 def get_top_k(sentences, similarities, k):
     idx = np.argsort(similarities)[::-1][:k] 
