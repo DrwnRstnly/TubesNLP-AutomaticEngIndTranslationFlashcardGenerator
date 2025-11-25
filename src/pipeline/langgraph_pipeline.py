@@ -3,7 +3,7 @@ from langgraph.graph import StateGraph, END
 from src.pipeline.state import PipelineState
 from src.task1_ranker.node import SSRNode
 from src.task2_intent.node import IntentNode
-# from src.task3_cefr.node import CEFRNode
+from src.task3_cefr.node import CEFRNode
 # from src.task4_mt.node import TranslationNode
 
 
@@ -23,12 +23,12 @@ graph.add_node(
     )
 )
 
-# graph.add_node(
-#     "CEFR",
-#     CEFRNode(
-#         model_path="src/task3_cefr/models/cefr_classifier"
-#     )
-# )
+graph.add_node(
+    "CEFR",
+    CEFRNode(
+        model_path="models/xlm-roberta-base"
+    )
+)
 
 # graph.add_node(
 #     "Translation",
@@ -40,9 +40,9 @@ graph.add_node(
 # === ENTRY POINT DAN EDGES ===
 graph.set_entry_point("SSR")
 graph.add_edge("SSR", "Intent")
-graph.add_edge("Intent", END)
+graph.add_edge("Intent", "CEFR")
+graph.add_edge("CEFR", END)
 
-# graph.add_edge("Intent", "CEFR")
 # graph.add_edge("CEFR", "Translation")
 # graph.add_edge("Translation", END)
 
