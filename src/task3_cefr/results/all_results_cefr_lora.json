@@ -1,0 +1,112 @@
+[
+  {
+    "model": "microsoft/deberta-v3-base",
+    "output_dir": "./runs_cefr_lora_deberta-v3-base",
+    "val": {
+      "eval_loss": 1.0273345708847046,
+      "eval_accuracy": 0.647,
+      "eval_f1_macro": 0.6124747079690301,
+      "eval_runtime": 1.3865,
+      "eval_samples_per_second": 721.224,
+      "eval_steps_per_second": 23.079,
+      "epoch": 5.0
+    },
+    "test": {
+      "eval_loss": 1.1118212938308716,
+      "eval_accuracy": 0.6083916083916084,
+      "eval_f1_macro": 0.577907462000665,
+      "eval_runtime": 1.4141,
+      "eval_samples_per_second": 707.887,
+      "eval_steps_per_second": 22.63,
+      "epoch": 5.0
+    }
+  },
+  {
+    "model": "FacebookAI/roberta-base",
+    "output_dir": "./runs_cefr_lora_roberta-base",
+    "val": {
+      "eval_loss": 1.322172999382019,
+      "eval_accuracy": 0.642,
+      "eval_f1_macro": 0.6233900369281172,
+      "eval_runtime": 0.7175,
+      "eval_samples_per_second": 1393.647,
+      "eval_steps_per_second": 44.597,
+      "epoch": 8.0
+    },
+    "test": {
+      "eval_loss": 1.4136520624160767,
+      "eval_accuracy": 0.6033966033966034,
+      "eval_f1_macro": 0.6068419949934022,
+      "eval_runtime": 0.7415,
+      "eval_samples_per_second": 1350.021,
+      "eval_steps_per_second": 43.158,
+      "epoch": 8.0
+    }
+  },
+  {
+    "model": "google-bert/bert-base-uncased",
+    "output_dir": "./runs_cefr_lora_bert-base-uncased",
+    "val": {
+      "eval_loss": 1.1241897344589233,
+      "eval_accuracy": 0.628,
+      "eval_f1_macro": 0.5973160916115933,
+      "eval_runtime": 0.7598,
+      "eval_samples_per_second": 1316.167,
+      "eval_steps_per_second": 42.117,
+      "epoch": 5.0
+    },
+    "test": {
+      "eval_loss": 1.1316627264022827,
+      "eval_accuracy": 0.6163836163836164,
+      "eval_f1_macro": 0.598085959088705,
+      "eval_runtime": 0.7776,
+      "eval_samples_per_second": 1287.241,
+      "eval_steps_per_second": 41.151,
+      "epoch": 5.0
+    }
+  },
+  {
+    "model": "distilbert/distilbert-base-uncased",
+    "output_dir": "./runs_cefr_lora_distilbert-base-uncased",
+    "val": {
+      "eval_loss": 0.8974350094795227,
+      "eval_accuracy": 0.641,
+      "eval_f1_macro": 0.6220807762305155,
+      "eval_runtime": 0.4264,
+      "eval_samples_per_second": 2345.006,
+      "eval_steps_per_second": 75.04,
+      "epoch": 4.0
+    },
+    "test": {
+      "eval_loss": 0.9527326226234436,
+      "eval_accuracy": 0.6273726273726273,
+      "eval_f1_macro": 0.5909089320702479,
+      "eval_runtime": 0.4426,
+      "eval_samples_per_second": 2261.532,
+      "eval_steps_per_second": 72.297,
+      "epoch": 4.0
+    }
+  },
+  {
+    "model": "FacebookAI/xlm-roberta-base",
+    "output_dir": "./runs_cefr_lora_xlm-roberta-base",
+    "val": {
+      "eval_loss": 0.8945679664611816,
+      "eval_accuracy": 0.658,
+      "eval_f1_macro": 0.6473210950305229,
+      "eval_runtime": 0.7425,
+      "eval_samples_per_second": 1346.788,
+      "eval_steps_per_second": 43.097,
+      "epoch": 4.0
+    },
+    "test": {
+      "eval_loss": 0.982379674911499,
+      "eval_accuracy": 0.6073926073926074,
+      "eval_f1_macro": 0.5742934049335457,
+      "eval_runtime": 0.7716,
+      "eval_samples_per_second": 1297.238,
+      "eval_steps_per_second": 41.47,
+      "epoch": 4.0
+    }
+  }
+]
