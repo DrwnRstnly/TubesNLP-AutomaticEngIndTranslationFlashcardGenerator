@@ -4,7 +4,6 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipe
 NUM_LABELS = 4 
 
 def load_intent_model(model_path: str):
-    """Loads a fine-tuned sequence classification model and creates a pipeline."""
     print(f"Loading Intent Classification model from: {model_path}")
 
     model = AutoModelForSequenceClassification.from_pretrained(model_path, num_labels=NUM_LABELS)
@@ -20,7 +19,6 @@ def load_intent_model(model_path: str):
     return classifier
 
 def classify_sentences(classifier, sentences: list) -> list:
-    """Classifies a list of sentences using the loaded pipeline."""
     
     results = classifier(sentences)
     
