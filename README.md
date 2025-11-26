@@ -12,6 +12,7 @@ The main entrypoint is `main.py`, which exposes a `/generate` endpoint that orch
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Running the Server](#running-the-server)
+- [Datasets](#datasets)
 
 ---
 
@@ -93,8 +94,15 @@ uvicorn src.api.main:app --reload
 
 ---
 
-Data Task 4 : https://drive.google.com/drive/folders/1YWx21zOhW086bXm3QMF6pIh1IKqUP9Zo?usp=sharing 
-Detail:
+## Datasets
+1. Dataset Task 1: https://huggingface.co/datasets/mteb/stsbenchmark-sts
+2. Dataset Task 2: https://huggingface.co/datasets/ConvLab/dailydialog
+3. Dataset Task 3: https://huggingface.co/datasets/UniversalCEFR/cefr_sp_en
+4. Dataset Task 4: https://drive.google.com/drive/folders/1YWx21zOhW086bXm3QMF6pIh1IKqUP9Zo?usp=sharing
+
+Informasi Tambahan Task 4:
 1. aligned_translation_pairs -> Data dari TEDx
-2. english.txt -> data flores ingriss
-3. indo.txt -> data flores ingriss
+2. english.txt -> Data Flores Bahasa Inggris
+3. indo.txt -> Data Flores Bahasa Inggris
+
+---
